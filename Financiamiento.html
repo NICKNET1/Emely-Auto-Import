@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>EMELY AUTO IMPORT</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos3.css">
+    <link rel="icon" href="Iconos/EMELY ICON.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <!--LOGO-->
+        <section id="logo">
+            <a href="Financiamiento.html"><img src="img/EMELY AUTO IMPORT. S.R.L.png" alt="Logo" class="imagenes"></a>
+        </section>
+        <!--LOGO-->
+    </header>
+
+
+
+    <!--BANNER-->
+    <section id="banner">
+        <div class="slider">
+            <ul>
+                <li>
+                    <img src="Slider/Ferrari 296 GTS Blue.jpeg" alt="Slider">
+                </li>
+                <li>
+                    <img src="Slider/Lamborghini Huracán Sterrato blue.jpeg" alt="Slider">
+                </li>
+                <li>
+                    <img src="Slider/Lamborghini Sián FKP 37 Blue.jpg" alt="Slider">
+                </li>
+                <li>
+                    <img src="Slider/Pagani Utopia Blue.jpeg" alt="Slider">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--BANNER-->
+
+    <section id="contenedor">
+
+    <!--MENU VERTICAL-->
+    <nav id="vertical">
+        <ul>
+            <li><a href="index.html"><img src="Iconos/Inicio.png" alt="Iconos">Inicio</a></li>
+            <li><a href="Inventario.html"><img src="Iconos/Inventario.png" alt="Iconos">Inventario</a></li>
+            <li><a href="Financiamiento.html"><img src="Iconos/Financiamiento.png" alt="Iconos">Financiamiento</a></li>
+            <li><a href="Servicios.html"><img src="Iconos/Servicios.png" alt="Iconos">Servicios</a></li>
+            <li><a href="Contacto.html"><img src="Iconos/Contacto.png" alt="Iconos">Contacto</a></li>
+            <li><a href="Nosotros.html"><img src="Iconos/Nosotros.png" alt="Iconos">Sobre Nosotros</a></li>
+        </ul>
+    </nav>
+    <!--MENU VERTICAL-->
+
+
+    <!--CONTENIDO-->
+    <main>
+    <section id="contenido">
+            <h2>Opciones de Financiamiento</h2>
+            <section class="financing-options">
+                <h3>Planes de Financiamiento</h3>
+                <p>Ofrecemos una variedad de planes de financiamiento adaptados a tus necesidades. Ya sea que estés buscando comprar un auto nuevo o usado, tenemos la opción adecuada para ti.</p>
+            </section>
+    
+            <section class="payment-calculator">
+                <h3>Calculadora de Pagos</h3>
+                <form id="calculator-form">
+                    <label for="amount">Monto del Préstamo ($):</label>
+                    <input type="number" id="amount" name="amount" required>
+                    
+                    <label for="interest">Tasa de Interés (%):</label>
+                    <input type="number" id="interest" name="interest" required>
+                    
+                    <label for="years">Años del Préstamo:</label>
+                    <input type="number" id="years" name="years" required>
+                    
+                    <button type="button" onclick="calculatePayment()">Calcular Pago</button>
+                </form>
+                <div id="payment-result"></div>
+            </section>
+    
+            <section class="credit-application">
+                <h3>Solicitud de Crédito</h3>
+                <form id="credit-form">
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="income">Ingresos Mensuales ($):</label>
+                    <input type="number" id="income" name="income" required>
+                    
+                    <label for="credit-score">Puntaje de Crédito:</label>
+                    <input type="number" id="credit-score" name="credit-score" required>
+                    
+                    <button type="submit">Enviar Solicitud</button>
+                </form>
+            </section>
+        </main>
+    <!--CONTENIDO-->
+
+    </section>
+
+
+    <!--PIE DE PAGINA-->
+    <footer>
+        <p></p>© 2024 Dealer de Autos. Todos los derechos reservados. Creador: Nick Steven Maria Jerez</p>
+    </footer>
+    <!--PIE DE PAGINA-->
+
+    <!--SCRIPT-->
+    <script>
+        function calculatePayment() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const interest = parseFloat(document.getElementById('interest').value);
+            const years = parseFloat(document.getElementById('years').value);
+
+            if (isNaN(amount) || isNaN(interest) || isNaN(years)) {
+                document.getElementById('payment-result').innerText = 'Por favor, ingrese valores válidos.';
+                return;
+            }
+
+            const monthlyInterest = interest / 100 / 12;
+            const numberOfPayments = years * 12;
+
+            if (monthlyInterest === 0) {
+                const monthlyPayment = amount / numberOfPayments;
+                document.getElementById('payment-result').innerText = `Pago Mensual Estimado: $${monthlyPayment.toFixed(2)}`;
+                return;
+            }
+
+            const numerator = monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments);
+            const denominator = Math.pow(1 + monthlyInterest, numberOfPayments) - 1;
+            const monthlyPayment = amount * (numerator / denominator);
+
+            document.getElementById('payment-result').innerText = `Pago Mensual Estimado: $${monthlyPayment.toFixed(2)}`;
+        }
+    </script>
+    <!--SCRIPT-->
+
+
+
+</body>
+</html>

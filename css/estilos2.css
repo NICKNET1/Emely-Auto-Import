@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0d1b35;
+    padding: 20px;
+}
+
+
+/*CABECERA*/
+header{
+    max-width: 1300px;
+    min-height: 220px;
+    margin: 0 auto;
+    background: #2e71ee;
+    border-radius: 35px 35px 0 0;
+}    
+
+#logo{
+    width: 320px;
+    float: left;
+    animation: 1s entradalogo 1;
+}
+
+
+/*KEYFRAMES DE LOGO*/
+
+@keyframes entradalogo {
+    0% {
+        transform: translateX(960px);
+    }
+}
+
+/*KEYFRAMES DE LOGO*/
+
+
+
+#logo img:hover{
+    filter: brightness(3);
+}
+
+.imagenes{
+    width: 320px;
+    height: 220px;
+    margin-left: 0;
+}
+/*CABECERA*/
+
+
+/*BANNER*/
+
+#banner{
+    max-width: 1300px;
+    min-height: 500px;
+    margin: 0 auto;
+    background: #436ab3;
+    box-sizing: border-box;
+}
+
+.slider{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider ul{
+    display: flex;
+    animation: cambio 9s infinite;
+    animation-direction: alternate;
+    width: 300%;
+}
+
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+
+.slider img{
+    width: 1300px;
+    height: 800px;
+}
+
+
+/*KEYFRAMES DE SLIDER*/
+
+@keyframes cambio{
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+/*KEYFRAMES DE SLIDER*/
+
+
+
+
+/*BANNER*/
+
+
+
+#contenedor{
+    max-width: 1300px;
+    min-height: 1100px;
+    background: #1e3b70;
+    margin: 0 auto;
+}
+
+
+/*MENU VERTICAL*/
+
+#vertical{
+    width: 350px;
+    min-height: 1100px;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e22ed+52,1e22ed+55 */
+background: linear-gradient(to right,  rgba(30,34,237,1) 52%,rgba(30,34,237,1) 55%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    float: left;
+}
+
+#vertical ul{
+    list-style: none;
+    padding: 10px;
+}
+
+#vertical a{
+    display: block;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+    background: radial-gradient(ellipse at center,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;
+    padding: 10px;
+    text-decoration: none;
+    margin-bottom: 20px;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00b3bc+0,018980+100 */
+background: radial-gradient(ellipse at center,  rgba(0,179,188,1) 0%,rgba(1,137,128,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 6px;
+    font-family: arial;
+    font-size: 18px;
+}
+
+#vertical a:hover{
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2cafe3+0,006ac1+38,00086b+99 */
+background: linear-gradient(to right,  rgba(44,175,227,1) 0%,rgba(0,106,193,1) 38%,rgba(0,8,107,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#vertical a:hover img{
+    animation: 2s rotacion 1;
+}
+
+/*KEYFRAMES DE ICONOS*/
+
+@keyframes rotacion {
+    0% {
+        transform: rotate(270deg);
+    }
+}
+
+/*KEYFRAMES DE ICONOS*/
+
+
+
+
+/*MENU VERTICAL*/
+
+
+
+/*CONTENIDO*/
+
+#contenido{
+    max-width: 1300px;
+    height: 1100px;
+    box-sizing: border-box;
+    background: #4174d4;
+    padding: 5px;
+    text-align: center;
+}
+   
+.inventory-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+        gap: 5px;
+        padding-left: 1em;
+        margin: 1em 0;
+}
+    
+.inventory-item {
+        background-color: #04c4ff;
+        padding: 10px;
+
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+}
+    
+.inventory-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+}
+    
+
+
+
+/*CONTENIDO*/
+
+
+
+
+/*PIE DE PAGINA*/
+
+footer{
+    max-width: 1300px;
+    border-radius: 0 0 35px 35px;
+    background: #436ab3;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 30px;
+    font-family: arial;
+    color: #000000;
+    text-align: center;
+}
+
+/*PIE DE PAGINA*/

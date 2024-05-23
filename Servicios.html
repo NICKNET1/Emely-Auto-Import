@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>EMELY AUTO IMPORT</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos4.css">
+    <link rel="icon" href="Iconos/EMELY ICON.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <!--LOGO-->
+        <section id="logo">
+            <a href="Servicios.html"><img src="img/EMELY AUTO IMPORT. S.R.L.png" alt="Logo" class="imagenes"></a>
+        </section>
+        <!--LOGO-->
+    </header>
+
+
+
+    <!--BANNER-->
+    <section id="banner">
+        <div class="slider">
+            <ul>
+                <li>
+                    <img src="Slider/Ferrari 296 GTS Blue.jpeg" alt="Slider">
+                </li>
+                <li>
+                    <img src="Slider/Lamborghini Huracán Sterrato blue.jpeg" alt="Slider">
+                </li>
+                <li>
+                    <img src="Slider/Lamborghini Sián FKP 37 Blue.jpg" alt="Slider">
+                </li>
+                <li>
+                    <img src="Slider/Pagani Utopia Blue.jpeg" alt="Slider">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--BANNER-->
+
+    <section id="contenedor">
+
+    <!--MENU VERTICAL-->
+    <nav id="vertical">
+        <ul>
+            <li><a href="index.html"><img src="Iconos/Inicio.png" alt="Iconos">Inicio</a></li>
+            <li><a href="Inventario.html"><img src="Iconos/Inventario.png" alt="Iconos">Inventario</a></li>
+            <li><a href="Financiamiento.html"><img src="Iconos/Financiamiento.png" alt="Iconos">Financiamiento</a></li>
+            <li><a href="Servicios.html"><img src="Iconos/Servicios.png" alt="Iconos">Servicios</a></li>
+            <li><a href="Contacto.html"><img src="Iconos/Contacto.png" alt="Iconos">Contacto</a></li>
+            <li><a href="Nosotros.html"><img src="Iconos/Nosotros.png" alt="Iconos">Sobre Nosotros</a></li>
+        </ul>
+    </nav>
+    <!--MENU VERTICAL-->
+
+
+    <!--CONTENIDO-->
+    <section id="contenido">
+        <main>
+            <h2>Servicios y Mantenimiento</h2>
+            <section class="service">
+                <h3>Mantenimiento y Reparaciones</h3>
+                <p>Ofrecemos servicios completos de mantenimiento y reparaciones para mantener tu auto en perfecto estado. Nuestro equipo de técnicos certificados está listo para ayudarte con cualquier necesidad de tu vehículo.</p>
+            </section>
+    
+            <section class="service">
+                <h3>Venta de Repuestos</h3>
+                <p>Contamos con un amplio inventario de repuestos originales y accesorios para tu vehículo. Garantizamos la calidad y compatibilidad de cada pieza.</p>
+            </section>
+    
+            <section class="service">
+                <h3>Servicio de Garantía</h3>
+                <p>Nuestros servicios de garantía te ofrecen tranquilidad. Estamos aquí para solucionar cualquier problema que surja durante el período de garantía de tu vehículo.</p>
+            </section>
+    
+            <section class="service">
+                <h3>Inspección y Diagnóstico</h3>
+                <p>Utilizamos la última tecnología en diagnóstico para inspeccionar tu vehículo y detectar cualquier problema antes de que se convierta en una avería mayor.</p>
+            </section>
+    
+            <section class="service">
+                <h3>Asesoría en Financiamiento</h3>
+                <p>Nuestros expertos en financiamiento están disponibles para ayudarte a encontrar el plan de financiamiento que mejor se adapte a tus necesidades y presupuesto.</p>
+            </section>
+    
+            <section class="service">
+                <h3>Servicios de Mantenimiento</h3>
+                <p>Nuestro equipo especializado ofrece una amplia gama de servicios de mantenimiento preventivo y correctivo, incluyendo cambios de aceite, inspección de frenos, alineación de ruedas y más. Mantén tu vehículo en óptimas condiciones con nuestros servicios de mantenimiento.</p>
+                <button onclick="showBookingForm()">Programar Cita</button>
+            </section>
+    
+            <section id="booking-form" class="hidden">
+                <h3>Programar Cita de Mantenimiento</h3>
+                <form onsubmit="scheduleMaintenance(event)">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" required>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" required>
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" required>
+                    <label for="service-type">Tipo de Servicio:</label>
+                    <select id="service-type">
+                        <option value="Cambio de Aceite">Cambio de Aceite</option>
+                        <option value="Inspección de Frenos">Inspección de Frenos</option>
+                        <option value="Alineación de Ruedas">Alineación de Ruedas</option>
+                        <!-- Agrega más opciones según los servicios ofrecidos -->
+                    </select>
+                    <label for="date">Fecha y Hora:</label>
+                    <input type="datetime-local" id="date" required>
+                    <button type="submit">Confirmar Cita</button>
+                </form>
+            </section>
+        </main>    
+    </section>
+    <!--CONTENIDO-->
+
+    </section>
+
+
+    <!--PIE DE PAGINA-->
+    <footer>
+        <p></p>© 2024 Dealer de Autos. Todos los derechos reservados. Creador: Nick Steven Maria Jerez</p>
+    </footer>
+    <!--PIE DE PAGINA-->
+
+    <!--SCRIPT-->
+    <script>
+        function showBookingForm() {
+            const bookingForm = document.getElementById('booking-form');
+            bookingForm.classList.remove('hidden');
+        }
+
+        function scheduleMaintenance(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const serviceType = document.getElementById('service-type').value;
+            const date = document.getElementById('date').value;
+
+
+            alert(`Cita programada con éxito:\nNombre: ${name}\nCorreo Electrónico: ${email}\nTeléfono: ${phone}\nTipo de Servicio: ${serviceType}\nFecha y Hora: ${date}`);
+
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('service-type').selectedIndex = 0;
+            document.getElementById('date').value = '';
+
+            // Oculta el formulario después de enviar
+            const bookingForm = document.getElementById('booking-form');
+            bookingForm.classList.add('hidden');
+        }
+    </script>
+    <!--SCRIPT-->
+
+
+
+</body>
+</html>
